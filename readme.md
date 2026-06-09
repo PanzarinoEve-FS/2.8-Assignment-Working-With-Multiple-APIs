@@ -59,18 +59,18 @@ Don't forget to link a stylesheet to your HTML!
 
 Using one of the provided API combinations or an instructor approved combination, obtain data from the APIs that can be used to create an interactive page. The expectations for your JavaScript are:
 
-`fetch` includes both `then` and `catch` methods<br>
-Error handling for rejected `promises`<br>
-The use of two `APIs` is required, at least one of which utilizes a form of `authentication`<br>
-The use of `Modules` to organize code.<br>
-When the page first loads, the APIs are accessed and the information is displayed only if both APIs respond successfully. <br>
-A reusable function for the APIs to be accessed through different events<br>
-An Empty state is presented until the intended data is ready<br>
-`localStorage` is used to limit API requests<br>
-Relevant HTML elements are created via JavaScript<br>
-All necessary JavaScript to run within an `IFFE` is organized as such.<br>
-Do NOT use any `async / await` to do this assignment<br>
-You can only use the `Fetch API` -> Doing so may result in a zero.<br>
+- `fetch` includes both `then` and `catch` methods
+- Error handling for rejected `promises`
+- The use of two `APIs` is required, at least one of which utilizes a form of `authentication`
+- The use of `Modules` to organize code.
+- When the page first loads, the APIs are accessed and the information is displayed only if both APIs respond successfully. 
+- A reusable function for the APIs to be accessed through different events
+- An Empty state is presented until the intended data is ready
+- `localStorage` is used to limit API requests
+- Relevant HTML elements are created via JavaScript
+- All necessary JavaScript to run within an `IFFE` is organized as such.
+- Do NOT use any `async / await` to do this assignment
+- You can only use the `Fetch API` -> Doing so may result in a zero.
 **Getting Started:**
 
 Remember to use Live Server for VS Code or an equivalent in another IDE to run a local server for these files.
