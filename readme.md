@@ -67,7 +67,7 @@ Using one of the provided API combinations or an instructor approved combination
 - A reusable function for the APIs to be accessed through different events
 - An Empty state is presented until the intended data is ready
 - `localStorage` is used to limit API requests
-- Relevant HTML elements are created via JavaScript
+- Relevant `HTML` elements are `created via JavaScript`
 - All necessary JavaScript to run within an `IFFE` is organized as such.
 - Do NOT use any `async / await` to do this assignment
 - You can only use the `Fetch API` -> Doing so may result in a zero.
