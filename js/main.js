@@ -27,7 +27,7 @@ import {
 (function () {
     "use strict";
 
-    //Page elements this file listens to
+    //Page elements this file for events
     let waifuBtn = document.querySelector("#waifu");
     let husbandoBtn = document.querySelector("#husbando");
     let nextDateBtn = document.querySelector("#nextDate");
@@ -37,7 +37,7 @@ import {
     let currentDate = null;   // the date object from API 1
     let messages = [];        // the conversation shown in the chat
 
-    // Persist the current state so a refresh doesn't need the APIs again.
+    // Persist so refresh doesn't need the APIs again.
     function save() {
         saveDate(currentDate);
         saveChat(messages);

@@ -14,7 +14,7 @@ const image = document.querySelector(".loveInterest");
 const dateStatus = document.querySelector(".dateStatus");
 const chat = document.querySelector(".messageContainer");
 
-// --- The date image (API 1)
+//The date image (API 1)
 
 // EMPTY / LOADING state
 export function showDateLoading() {
