@@ -36,8 +36,12 @@ export function fetchDate(category) {
 
 /*
  API 2 -- API Ninjas Quotes (needs the X-Api-Key header => authentication)
+
+ This call is DEPENDENT on API 1: it takes the `date` object we got back from
+ nekos.best and stamps the returned quote with that date's identity (its
+ category + portrait artist). So API 2's result is built from API 1's response.
 */
-export function fetchQuote() {
+export function fetchQuote(date) {
     return fetch("https://api.api-ninjas.com/v1/quotes", {
         headers: { "X-Api-Key": API_NINJAS_KEY }
     })
@@ -53,7 +57,10 @@ export function fetchQuote() {
             }
             return {
                 text: data[0].quote,
-                author: data[0].author
+                author: data[0].author,
+                // Carried over from API 1's response -> the two are chained AND dependent.
+                category: date.category,
+                dateArtist: date.artist
             };
         });
 }

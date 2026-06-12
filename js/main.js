@@ -27,12 +27,12 @@ import {
 (function () {
     "use strict";
 
-    //Page elements this file for events
-    let waifuBtn = document.querySelector("#waifu");
-    let husbandoBtn = document.querySelector("#husbando");
-    let nextDateBtn = document.querySelector("#nextDate");
-    let sendInput = document.querySelector("#sendMessage");
-    let sendButton = document.querySelector("#sendButton");
+    //Page elements this file for events (complex / descendant + attribute selectors)
+    let waifuBtn = document.querySelector(".Button-Grid > #waifu");
+    let husbandoBtn = document.querySelector(".Button-Grid > #husbando");
+    let nextDateBtn = document.querySelector(".imageContainer > #nextDate");
+    let sendInput = document.querySelector(".sendRow input[type='text']");
+    let sendButton = document.querySelector(".sendRow > #sendButton");
     
     let currentDate = null;   // the date object from API 1
     let messages = [];        // the conversation shown in the chat
@@ -62,7 +62,7 @@ import {
         fetchDate(category) // API 1
             .then(function (date) {
                 currentDate = date;
-                return fetchQuote() // API 2 (chained after API 1)
+                return fetchQuote(date) // API 2 (chained after & dependent on API 1)
                     .then(function (quote) {
                         //only render if both succeeed.
                         showDate(date);
@@ -96,7 +96,7 @@ import {
         sendInput.value = "";
         save();
 
-        fetchQuote()
+        fetchQuote(currentDate) // depends on the current date (from API 1)
             .then(function (quote) {
                 messages.push({
                     from: "date",
