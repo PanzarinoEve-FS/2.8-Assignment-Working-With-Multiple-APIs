@@ -1,1 +1,57 @@
+<!--
+Eve Panzarino (jhankins)
+6/12/2026
+Application Development 1
+2.8-Assignment-Working-With-Multiple-APIs
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dating A Nerd Simulator</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header>
+    <h1>Dating A Nerd Simulator</h1>
+    <p class="tagline">Meet a date from nekos.best. they speak only in quotes because they're nerds.</p>
+</header>
 
+<main>
+    <div class="content-grid-container">
+
+        <!-- SECTION 1: the date (API 1 - nekos.best) -->
+        <section class="date-section">
+            <div class="imageContainer">
+                <div class="Button-Grid">
+                    <button id="waifu">Waifu</button>
+                    <button id="husbando">Husbando</button>
+                </div>
+                <img class="loveInterest hidden" alt="Your date">
+                <p class="dateStatus">Finding your date...</p>
+                <button id="nextDate">Next Date</button>
+            </div>
+        </section>
+
+        <!-- SECTION 2: the chat (API 2 - API Ninjas Quotes) -->
+        <section class="chat-section">
+            <!-- Chat bubbles are created in JavaScript (js/ui.js). -->
+            <div class="messageContainer"></div>
+            <div class="sendRow">
+                <input type="text" id="sendMessage" placeholder="Enter a message.">
+                <button id="sendButton">Send</button>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<footer>
+    <img id="evelogo" src="imgs/EVELOGO1.png" alt="Eve Logo">
+    <p>Eve Panzarino </p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
