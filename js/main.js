@@ -12,7 +12,7 @@ main.js  --  the entry point that wires the modules to the page.
 Flow on first visit:
   fetchDate (API 1)  ->  .then  ->  fetchQuote (API 2)  ->  .then  -> render date + chat
 
-On later visits the date + chat are read from localStorage and shown WITHOUT
+On later visits the date + chat are read from localStorage and shown Without
 calling the APIs again, which keeps our request count down.
 */
 

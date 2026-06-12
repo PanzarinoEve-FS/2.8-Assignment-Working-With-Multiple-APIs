@@ -14,9 +14,9 @@ const image = document.querySelector(".loveInterest");
 const dateStatus = document.querySelector(".dateStatus");
 const chat = document.querySelector(".messageContainer");
 
-// --- The date image (API 1) -----------------------------------------------
+// --- The date image (API 1)
 
-// EMPTY / LOADING state: hide the image and show a friendly placeholder.
+// EMPTY / LOADING state
 export function showDateLoading() {
     image.classList.add("hidden");
     image.removeAttribute("src");
@@ -38,8 +38,7 @@ export function showDateError(message) {
     dateStatus.textContent = message;
 }
 
-// --- The chat (API 2) ------------------------------------------------------
-
+//The chat (API 2)
 // Build one chat bubble element from a message object. Created in JavaScript.
 function createMessageElement(message) {
     const p = document.createElement("p");
