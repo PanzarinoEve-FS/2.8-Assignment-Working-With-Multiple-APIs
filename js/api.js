@@ -7,13 +7,13 @@ api.js  --  the two API sources, as reusable functions.
   API 1: nekos.best        -> the date's portrait image      (no key needed)
   API 2: API Ninjas Quotes -> the date's "message" (a quote) (KEY required)
 
-The two are CHAINED: the quote we ask for depends on the image we got back.
+The two are Chained: the quote we ask for depends on the image we got back.
 */
 
 import { API_NINJAS_KEY } from "./config.js";
 
 /*
- API 1 -- nekos.best (no key needed => no authentication, just a simple fetch)
+ API 1 - nekos.best (no key needed => no authentication)
 */
 export function fetchDate(category) {
     return fetch("https://nekos.best/api/v2/" + category)
@@ -58,7 +58,7 @@ export function fetchQuote(date) {
             return {
                 text: data[0].quote,
                 author: data[0].author,
-                // Carried over from API 1's response -> the two are chained AND dependent.
+                // Carried over from API 1's response > the two are chained & dependent.
                 category: date.category,
                 dateArtist: date.artist
             };

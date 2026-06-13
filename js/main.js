@@ -50,7 +50,11 @@ import {
     }
 
     /*
-     Get a brand new date. This is Chained.
+     Get a new date. This is Chained.
+     The depenency of the date (neko api) & Quotes
+     I made the project then realized the apis I wanted to use together did not have a relevant way to link.
+     I know that there is a key a lot of the time to query data, but i could not find relevant fields in the apis.
+     I am not sure if I missed the point here, but the quote selected depends on the selected image of the date.
     */
     function getNewDate(category) {
         showDateLoading();   // empty / loading state until the data is ready
@@ -69,7 +73,10 @@ import {
                         messages = [{
                             from: "date",
                             text: quote.text,
-                            author: quote.author
+                            author: quote.author,
+                            // API 1 data the quote was paired with (shows the dependency).
+                            category: quote.category,
+                            dateArtist: quote.dateArtist
                         }];
                         renderChat(messages);
                         save();
@@ -101,7 +108,10 @@ import {
                 messages.push({
                     from: "date",
                     text: quote.text,
-                    author: quote.author
+                    author: quote.author,
+                    // API 1 data the quote was paired with (shows the dependency).
+                    category: quote.category,
+                    dateArtist: quote.dateArtist
                 });
                 renderChat(messages);
                 save();
@@ -110,7 +120,7 @@ import {
                 console.log(error);
                 messages.push({
                     from: "date",
-                    text: ".your date went quiet -- try again)"
+                    text: ".your date went quiet - try again)"
                 });
                 renderChat(messages);
             });

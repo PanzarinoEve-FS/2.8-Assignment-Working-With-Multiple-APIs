@@ -4,7 +4,7 @@ Eve Panzarino (jhankins)
 
 ui.js  --  everything that touches the page (the "view").
 
-This module owns the DOM. It builds the chat bubbles with createElement (the
+This is the UI Module It builds the chat bubbles with createElement (the
 "create HTML elements through JavaScript" requirement) and swaps the interface
 between its empty / loading / loaded / error states.
 */
@@ -57,6 +57,15 @@ function createMessageElement(message) {
 
         p.appendChild(quote);
         p.appendChild(author);
+
+        // A second credit line built from API 1's response (the date's category
+        // + portrait artist), making the API 1 -> API 2 dependency visible.
+        if (message.dateArtist) {
+            const dateMeta = document.createElement("span");
+            dateMeta.classList.add("quote-author");
+            dateMeta.textContent = "your " + message.category + " · art by " + message.dateArtist;
+            p.appendChild(dateMeta);
+        }
     } else {
         p.textContent = message.text;
     }

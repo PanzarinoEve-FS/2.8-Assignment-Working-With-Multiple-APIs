@@ -2,6 +2,15 @@
 Eve Panzarino (jhankins)
 2.8 - Working With Multiple APIs
 */
+
+/* Self-hosted so the type renders even where the font isn't installed. */
+@font-face {
+    font-family: "New Caledonia LT Std";
+    src: url("../fonts/NewCaledoniaLTStd.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 #evelogo {
     width: 20vw;
 
@@ -9,7 +18,7 @@ Eve Panzarino (jhankins)
 body {
     background-color: #000000;
     color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "New Caledonia LT Std", Georgia, "Times New Roman", serif;
     margin: 0;
 }
 
@@ -42,6 +51,11 @@ main {
 }
 
 /* Buttons */ 
+
+button,
+input {
+    font-family: inherit;
+}
 
 button {
     cursor: pointer;
