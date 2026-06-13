@@ -31,8 +31,8 @@ import {
     let waifuBtn = document.querySelector(".Button-Grid > #waifu");
     let husbandoBtn = document.querySelector(".Button-Grid > #husbando");
     let nextDateBtn = document.querySelector(".imageContainer > #nextDate");
+    let sendForm = document.querySelector(".sendRow");
     let sendInput = document.querySelector(".sendRow input[type='text']");
-    let sendButton = document.querySelector(".sendRow > #sendButton");
     
     let currentDate = null;   // the date object from API 1
     let messages = [];        // the conversation shown in the chat
@@ -132,11 +132,11 @@ import {
     nextDateBtn.addEventListener("click", function () {
         getNewDate(loadCategory());
     });
-    sendButton.addEventListener("click", sendMessage);
-    sendInput.addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-            sendMessage();
-        }
+    // The send row is a <form>, so Enter and the Send button both fire "submit".
+    // preventDefault stops the browser from reloading the page on submit.
+    sendForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        sendMessage();
     });
 
     /* 
