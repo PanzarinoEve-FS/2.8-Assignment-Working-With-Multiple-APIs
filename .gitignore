@@ -1,0 +1,3 @@
+# Keep the real API key off GitHub.
+# Copy js/config.example.js to js/config.js and put your key there.
+js/config.js

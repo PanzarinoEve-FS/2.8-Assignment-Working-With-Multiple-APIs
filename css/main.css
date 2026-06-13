@@ -1,0 +1,228 @@
+/*
+Eve Panzarino (jhankins)
+2.8 - Working With Multiple APIs
+*/
+
+/* Self-hosted so the type renders even where the font isn't installed. */
+@font-face {
+    font-family: "New Caledonia LT Std";
+    src: url("../fonts/NewCaledoniaLTStd.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+#evelogo {
+    width: 20vw;
+
+}
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "New Caledonia LT Std", Georgia, "Times New Roman", serif;
+    margin: 0;
+}
+
+/* Accessibility helpers */
+
+/* Hide visually but keep it for screen readers (labels, section headings). */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Skip link: hidden until a keyboard user tabs to it. */
+.skip-link {
+    position: absolute;
+    left: 8px;
+    top: -40px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 8px 12px;
+    z-index: 100;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 8px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.tagline {
+    text-align: center;
+    margin-top: 4px;
+    opacity: 0.7;
+}
+
+main {
+    margin: 0 auto;
+    width: 80vw;
+}
+
+/* Two side-by-side sections: the date and the chat. */
+.content-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vw;
+}
+
+.date-section,
+.chat-section {
+    width: 40vw;
+}
+
+/* Buttons */ 
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+    padding: 4px 8px;
+    color: #000000;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    font-weight: bold;
+}
+
+button:hover {
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    background-color: #000000;
+}
+
+/* The currently selected toggle (waifu / husbando). */
+button.active {
+    color: #ffffff;
+    background-color: #000000;
+    border: 2px solid #ffffff;
+}
+
+.Button-Grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Section 1: the date image*/
+.loveInterest {
+    width: 40vw;
+    height: 40vw;
+    object-fit: cover;
+    display: block;
+}
+
+/* Used for the empty / loading / error states. */
+.hidden {
+    display: none;
+}
+
+.dateStatus {
+    text-align: center;
+    min-height: 1.2em;
+    margin: 6px 0;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+#nextDate {
+    display: block;
+    width: 40vw;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+/* Section 2: the chat*/
+.chat-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.messageContainer {
+    flex: 1;
+    height: 40vw;
+    box-sizing: border-box;
+    overflow-y: auto;
+    border: 2px solid #ffffff;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* chat bubble (created in JavaScript). */
+.chat-message {
+    max-width: 80%;
+    padding: 8px 12px;
+    border-radius: 12px;
+    margin: 0;
+    word-wrap: break-word;
+}
+
+/* The date's messages (quotes) */
+.from-date {
+    align-self: flex-start;
+    background-color: #ffffff;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+}
+
+.from-you {
+    align-self: flex-end;
+    background-color: #2b2b2b;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.quote-author {
+    font-size: 0.8em;
+    opacity: 0.7;
+    margin-top: 4px;
+    text-align: right;
+}
+
+/* Empty-state bubble */
+.empty-state {
+    align-self: center;
+    background: none;
+    color: #ffffff;
+    opacity: 0.6;
+    font-style: italic;
+}
+
+.sendRow {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#sendMessage {
+    flex: 1;
+    height: 40px;
+    box-sizing: border-box;
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 0 8px;
+}
+
+/*Footer */
+footer {
+    text-align: center;
+    padding: 16px;
+    margin-top: 20px;
+    opacity: 1;
+    font-size: 0.85em;
+}
